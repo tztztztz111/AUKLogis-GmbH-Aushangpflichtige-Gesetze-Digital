@@ -17,6 +17,7 @@
     }
 
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: Arial, Helvetica, sans-serif;
@@ -104,32 +105,6 @@
       min-height: 780px;
     }
 
-    .stack-logos {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      align-items: flex-start;
-      margin-bottom: 18px;
-    }
-
-    .stack-logos img {
-      display: block;
-      object-fit: contain;
-      background: transparent;
-    }
-
-    .logo-western {
-      max-width: 430px;
-      width: 100%;
-      max-height: 78px;
-    }
-
-    .logo-auk {
-      max-width: 400px;
-      width: 100%;
-      max-height: 95px;
-    }
-
     .hero-title {
       margin: 18px 0 46px;
       font-size: 50px;
@@ -189,32 +164,41 @@
 
     @media (max-width: 768px) {
       :root { --left-rail: 0px; }
+
       .topbar {
         grid-template-columns: 1fr;
       }
+
       .brand-left {
         justify-content: flex-start;
         padding-left: 20px;
       }
+
       .page {
         grid-template-columns: 1fr;
       }
+
       .sidebar {
         display: none;
       }
+
       .topbar-main {
         padding: 18px 20px 20px;
       }
+
       .topbar-title {
         font-size: 24px;
       }
+
       .hero-title {
         font-size: 30px;
         margin-bottom: 30px;
       }
+
       .laws-card {
         padding: 22px 20px;
       }
+
       .laws-list a {
         font-size: 18px;
       }
@@ -224,7 +208,7 @@
 <body>
   <header class="topbar">
     <div class="brand-left">
-      <img src="Auklogis logo透明水印.png" alt="AUKLogis" />
+      <img src="auklogis-logo.png" alt="AUKLogis" />
     </div>
     <div class="topbar-main">
       <h1 class="topbar-title">Aushangpflichtige Gesetze Digital</h1>
@@ -243,42 +227,41 @@
         <section class="laws-card">
           <h2>Aushangpflichtige Gesetze</h2>
           <ul class="laws-list">
-            <li><a href="#" target="_blank">Allgemeines Gleichbehandlungsgesetz</a></li>
-            <li><a href="#" target="_blank">Arbeitsgerichtsgesetz</a></li>
-            <li><a href="#" target="_blank">Arbeitsschutzgesetz</a></li>
-            <li><a href="#" target="_blank">Arbeitssicherheitsgesetz</a></li>
-            <li><a href="#" target="_blank">Arbeitsstättenverordnung</a></li>
-            <li><a href="#" target="_blank">Arbeitszeitgesetz</a></li>
-            <li><a href="#" target="_blank">Betriebssicherheitsverordnung</a></li>
-            <li><a href="#" target="_blank">Betriebsverfassungsgesetz</a></li>
-            <li><a href="#" target="_blank">Bundesdatenschutzgesetz</a></li>
-            <li><a href="#" target="_blank">Bundeselterngeld- und Elternzeitgesetz</a></li>
-            <li><a href="#" target="_blank">Bundesurlaubsgesetz</a></li>
-            <li><a href="#" target="_blank">Bürgerliches Gesetzbuch</a></li>
-            <li><a href="#" target="_blank">DGUV Vorschrift 1: Grundsätze der Prävention</a></li>
-            <li><a href="#" target="_blank">Datenschutz-Grundverordnung</a></li>
-            <li><a href="#" target="_blank">Fahrpersonalgesetz</a></li>
-            <li><a href="#" target="_blank">Familienpflegezeitgesetz</a></li>
-            <li><a href="#" target="_blank">Gefahrstoffverordnung</a></li>
-            <li><a href="#" target="_blank">Gesetz zum Schutz von Geschäftsgeheimnissen</a></li>
-            <li><a href="#" target="_blank">Heimarbeitsgesetz</a></li>
-            <li><a href="#" target="_blank">Infektionsschutzgesetz</a></li>
-            <li><a href="#" target="_blank">Kündigungsschutzgesetz</a></li>
-            <li><a href="#" target="_blank">Ladenschlussgesetz</a></li>
-            <li><a href="#" target="_blank">Lastenhandhabungsverordnung</a></li>
-            <li><a href="#" target="_blank">Mindestlohngesetz</a></li>
-            <li><a href="#" target="_blank">Mutterschutzgesetz</a></li>
-            <li><a href="#" target="_blank">Nachweisgesetz</a></li>
-            <li><a href="#" target="_blank">PSA-Benutzungsverordnung</a></li>
-            <li><a href="#" target="_blank">Pflegezeitgesetz</a></li>
-            <li><a href="#" target="_blank">Teilzeit- und Befristungsgesetz</a></li>
-            <li><a href="#" target="_blank">Verordnung zur arbeitsmedizinischen Vorsorge</a></li>
+            <li><a href="https://www.gesetze-im-internet.de/agg/" target="_blank" rel="noopener noreferrer">Allgemeines Gleichbehandlungsgesetz</a></li>
+            <li><a href="https://www.gesetze-im-internet.de/arbgg/" target="_blank" rel="noopener noreferrer">Arbeitsgerichtsgesetz</a></li>
+            <li><a href="https://www.gesetze-im-internet.de/arbschg/" target="_blank" rel="noopener noreferrer">Arbeitsschutzgesetz</a></li>
+            <li><a href="https://www.gesetze-im-internet.de/asig/" target="_blank" rel="noopener noreferrer">Arbeitssicherheitsgesetz</a></li>
+            <li><a href="https://www.gesetze-im-internet.de/arbst_ttv_2004/" target="_blank" rel="noopener noreferrer">Arbeitsstättenverordnung</a></li>
+            <li><a href="https://www.gesetze-im-internet.de/arbzg/" target="_blank" rel="noopener noreferrer">Arbeitszeitgesetz</a></li>
+            <li><a href="https://www.gesetze-im-internet.de/betrsichv_2015/" target="_blank" rel="noopener noreferrer">Betriebssicherheitsverordnung</a></li>
+            <li><a href="https://www.gesetze-im-internet.de/betrvg/" target="_blank" rel="noopener noreferrer">Betriebsverfassungsgesetz</a></li>
+            <li><a href="https://www.gesetze-im-internet.de/bdsg_2018/" target="_blank" rel="noopener noreferrer">Bundesdatenschutzgesetz</a></li>
+            <li><a href="https://www.gesetze-im-internet.de/beeg/" target="_blank" rel="noopener noreferrer">Bundeselterngeld- und Elternzeitgesetz</a></li>
+            <li><a href="https://www.gesetze-im-internet.de/burlg/" target="_blank" rel="noopener noreferrer">Bundesurlaubsgesetz</a></li>
+            <li><a href="https://www.gesetze-im-internet.de/bgb/" target="_blank" rel="noopener noreferrer">Bürgerliches Gesetzbuch</a></li>
+            <li><a href="https://publikationen.dguv.de/widgets/pdf/download/article/2909" target="_blank" rel="noopener noreferrer">DGUV Vorschrift 1: Grundsätze der Prävention</a></li>
+            <li><a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj" target="_blank" rel="noopener noreferrer">Datenschutz-Grundverordnung</a></li>
+            <li><a href="https://www.gesetze-im-internet.de/fpersg/" target="_blank" rel="noopener noreferrer">Fahrpersonalgesetz</a></li>
+            <li><a href="https://www.gesetze-im-internet.de/fpfzg/" target="_blank" rel="noopener noreferrer">Familienpflegezeitgesetz</a></li>
+            <li><a href="https://www.gesetze-im-internet.de/gefstoffv_2010/" target="_blank" rel="noopener noreferrer">Gefahrstoffverordnung</a></li>
+            <li><a href="https://www.gesetze-im-internet.de/geschgehg/" target="_blank" rel="noopener noreferrer">Gesetz zum Schutz von Geschäftsgeheimnissen</a></li>
+            <li><a href="https://www.gesetze-im-internet.de/hag/" target="_blank" rel="noopener noreferrer">Heimarbeitsgesetz</a></li>
+            <li><a href="https://www.gesetze-im-internet.de/ifsg/" target="_blank" rel="noopener noreferrer">Infektionsschutzgesetz</a></li>
+            <li><a href="https://www.gesetze-im-internet.de/kschg/" target="_blank" rel="noopener noreferrer">Kündigungsschutzgesetz</a></li>
+            <li><a href="https://www.gesetze-im-internet.de/ladschlg/" target="_blank" rel="noopener noreferrer">Ladenschlussgesetz</a></li>
+            <li><a href="https://www.gesetze-im-internet.de/lasthandhabv/" target="_blank" rel="noopener noreferrer">Lastenhandhabungsverordnung</a></li>
+            <li><a href="https://www.gesetze-im-internet.de/milog/" target="_blank" rel="noopener noreferrer">Mindestlohngesetz</a></li>
+            <li><a href="https://www.gesetze-im-internet.de/muschg_2018/" target="_blank" rel="noopener noreferrer">Mutterschutzgesetz</a></li>
+            <li><a href="https://www.gesetze-im-internet.de/nachwg/" target="_blank" rel="noopener noreferrer">Nachweisgesetz</a></li>
+            <li><a href="https://www.gesetze-im-internet.de/psa-bv/" target="_blank" rel="noopener noreferrer">PSA-Benutzungsverordnung</a></li>
+            <li><a href="https://www.gesetze-im-internet.de/pflegezg/" target="_blank" rel="noopener noreferrer">Pflegezeitgesetz</a></li>
+            <li><a href="https://www.gesetze-im-internet.de/tzbfg/" target="_blank" rel="noopener noreferrer">Teilzeit- und Befristungsgesetz</a></li>
+            <li><a href="https://www.gesetze-im-internet.de/arbmedvv/" target="_blank" rel="noopener noreferrer">Verordnung zur arbeitsmedizinischen Vorsorge</a></li>
           </ul>
         </section>
 
         <p class="hint">
-          Hinweis: Bitte ersetzen Sie die Platzhalter-Links (#) durch die tatsächlichen PDF- oder Webseiten-Links.
-          Wenn Sie möchten, können einzelne Gesetze auch auf eigene Unterseiten oder PDF-Dateien verlinkt werden.
+          Hinweis: Alle Einträge sind anklickbar. Bitte stellen Sie sicher, dass die digitale Bereitstellung im Betrieb jederzeit zugänglich ist.
         </p>
       </div>
     </main>
