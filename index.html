@@ -1,88 +1,287 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>AUKLogis GmbH – Aushangpflichtige Gesetze Digital</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aushangpflichtige Gesetze Digital</title>
   <style>
+    :root {
+      --blue: #0f5fe8;
+      --navy: #1c2333;
+      --bg: #ededed;
+      --text: #0e1a2b;
+      --muted: #5a6473;
+      --card-border: #f15a4a;
+      --left-rail: 210px;
+      --content-width: 1180px;
+    }
+
+    * { box-sizing: border-box; }
     body {
-      font-family: Arial, sans-serif;
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-      line-height: 1.6;
-      color: #222;
-      background: #f7f7f7;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
     }
-    .card {
-      background: white;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 30px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+
+    .topbar {
+      display: grid;
+      grid-template-columns: var(--left-rail) 1fr;
+      min-height: 102px;
+      background: #fff;
+      border-bottom: 1px solid #d8d8d8;
     }
-    h1 {
-      margin-top: 0;
-      font-size: 32px;
+
+    .brand-left {
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px;
     }
-    h2 {
-      margin-top: 30px;
-      font-size: 20px;
+
+    .brand-left img {
+      max-width: 170px;
+      max-height: 72px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      display: block;
     }
-    ul {
-      padding-left: 20px;
+
+    .topbar-main {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 0 28px;
     }
+
+    .topbar-title {
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 1.2;
+      margin: 0;
+    }
+
+    .section-bar {
+      background: var(--navy);
+      color: #fff;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      padding: 0 10px;
+      font-size: 17px;
+      font-weight: 700;
+    }
+
+    .page {
+      display: grid;
+      grid-template-columns: var(--left-rail) 1fr;
+      min-height: calc(100vh - 150px);
+    }
+
+    .sidebar {
+      background:
+        repeating-linear-gradient(
+          135deg,
+          #dadada,
+          #dadada 3px,
+          #efefef 3px,
+          #efefef 22px
+        );
+      border-right: 1px solid #d8d8d8;
+    }
+
+    .main {
+      padding: 48px 0 72px;
+    }
+
+    .content-wrap {
+      max-width: var(--content-width);
+      margin: 0 auto;
+      background: #f6f6f6;
+      padding: 56px 56px 72px;
+      min-height: 780px;
+    }
+
+    .stack-logos {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 18px;
+    }
+
+    .stack-logos img {
+      display: block;
+      object-fit: contain;
+      background: transparent;
+    }
+
+    .logo-western {
+      max-width: 430px;
+      width: 100%;
+      max-height: 78px;
+    }
+
+    .logo-auk {
+      max-width: 400px;
+      width: 100%;
+      max-height: 95px;
+    }
+
+    .hero-title {
+      margin: 18px 0 46px;
+      font-size: 50px;
+      line-height: 1.1;
+      font-weight: 800;
+      color: #0b1a33;
+    }
+
+    .laws-card {
+      max-width: 640px;
+      background: #fff;
+      border: 4px solid var(--card-border);
+      padding: 28px 40px 30px;
+    }
+
+    .laws-card h2 {
+      font-size: 22px;
+      margin: 0 0 20px;
+      line-height: 1.25;
+    }
+
+    .laws-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .laws-list li + li {
+      margin-top: 18px;
+    }
+
+    .laws-list a {
+      font-size: 21px;
+      line-height: 1.35;
+      color: #0b1a33;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .laws-list a:hover {
+      text-decoration: underline;
+      color: var(--blue);
+    }
+
     .hint {
-      background: #fff4e8;
-      border-left: 4px solid #f07d22;
-      padding: 12px 14px;
-      margin: 20px 0;
-    }
-    .small {
-      color: #666;
+      margin-top: 28px;
+      color: var(--muted);
       font-size: 14px;
+      max-width: 640px;
+    }
+
+    @media (max-width: 1100px) {
+      :root { --left-rail: 150px; }
+      .hero-title { font-size: 38px; }
+      .content-wrap { padding: 36px 28px 48px; }
+    }
+
+    @media (max-width: 768px) {
+      :root { --left-rail: 0px; }
+      .topbar {
+        grid-template-columns: 1fr;
+      }
+      .brand-left {
+        justify-content: flex-start;
+        padding-left: 20px;
+      }
+      .page {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        display: none;
+      }
+      .topbar-main {
+        padding: 18px 20px 20px;
+      }
+      .topbar-title {
+        font-size: 24px;
+      }
+      .hero-title {
+        font-size: 30px;
+        margin-bottom: 30px;
+      }
+      .laws-card {
+        padding: 22px 20px;
+      }
+      .laws-list a {
+        font-size: 18px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>AUKLogis GmbH</h1>
-    <h2>Aushangpflichtige Gesetze & Arbeitsschutzunterlagen</h2>
-
-    <p>
-      Die für unseren Betrieb relevanten gesetzlichen Aushänge sowie ausgewählte
-      arbeitsschutzbezogene Unterlagen werden digital zur Verfügung gestellt.
-    </p>
-
-    <div class="hint">
-      Bitte stellen Sie sicher, dass alle Beschäftigten jederzeit Zugang zu diesen Unterlagen haben.
+  <header class="topbar">
+    <div class="brand-left">
+      <img src="Auklogis logo透明水印.png" alt="AUKLogis" />
     </div>
+    <div class="topbar-main">
+      <h1 class="topbar-title">Aushangpflichtige Gesetze Digital</h1>
+    </div>
+  </header>
 
-    <h2>Verfügbare Unterlagen</h2>
-    <ul>
-      <li>Allgemeines Gleichbehandlungsgesetz (AGG)</li>
-      <li>Arbeitszeitgesetz (ArbZG)</li>
-      <li>Mutterschutzgesetz (MuSchG)</li>
-      <li>Arbeitsstättenverordnung (ArbStättV)</li>
-      <li>Betriebssicherheitsverordnung (BetrSichV)</li>
-      <li>Gefahrstoffverordnung (GefStoffV) – soweit einschlägig</li>
-      <li>DGUV Vorschrift 1 – Grundsätze der Prävention</li>
-      <li>Lastenhandhabungsverordnung</li>
-      <li>PSA-Benutzungsverordnung</li>
-      <li>Verordnung zur arbeitsmedizinischen Vorsorge (ArbMedVV)</li>
-      <li>Flucht- und Rettungsplan</li>
-      <li>Betriebsanweisungen</li>
-    </ul>
+  <div class="section-bar">Übersicht</div>
 
-    <h2>Ansprechperson</h2>
-    <p>
-      Ansprechpartner: ___________________________<br>
-      E-Mail / Telefon: ___________________________
-    </p>
+  <div class="page">
+    <aside class="sidebar"></aside>
 
-    <p class="small">
-      Stand: 04/2026
-    </p>
+    <main class="main">
+      <div class="content-wrap">
+        <div class="hero-title">Aushangpflichtige Gesetze Digital</div>
+
+        <section class="laws-card">
+          <h2>Aushangpflichtige Gesetze</h2>
+          <ul class="laws-list">
+            <li><a href="#" target="_blank">Allgemeines Gleichbehandlungsgesetz</a></li>
+            <li><a href="#" target="_blank">Arbeitsgerichtsgesetz</a></li>
+            <li><a href="#" target="_blank">Arbeitsschutzgesetz</a></li>
+            <li><a href="#" target="_blank">Arbeitssicherheitsgesetz</a></li>
+            <li><a href="#" target="_blank">Arbeitsstättenverordnung</a></li>
+            <li><a href="#" target="_blank">Arbeitszeitgesetz</a></li>
+            <li><a href="#" target="_blank">Betriebssicherheitsverordnung</a></li>
+            <li><a href="#" target="_blank">Betriebsverfassungsgesetz</a></li>
+            <li><a href="#" target="_blank">Bundesdatenschutzgesetz</a></li>
+            <li><a href="#" target="_blank">Bundeselterngeld- und Elternzeitgesetz</a></li>
+            <li><a href="#" target="_blank">Bundesurlaubsgesetz</a></li>
+            <li><a href="#" target="_blank">Bürgerliches Gesetzbuch</a></li>
+            <li><a href="#" target="_blank">DGUV Vorschrift 1: Grundsätze der Prävention</a></li>
+            <li><a href="#" target="_blank">Datenschutz-Grundverordnung</a></li>
+            <li><a href="#" target="_blank">Fahrpersonalgesetz</a></li>
+            <li><a href="#" target="_blank">Familienpflegezeitgesetz</a></li>
+            <li><a href="#" target="_blank">Gefahrstoffverordnung</a></li>
+            <li><a href="#" target="_blank">Gesetz zum Schutz von Geschäftsgeheimnissen</a></li>
+            <li><a href="#" target="_blank">Heimarbeitsgesetz</a></li>
+            <li><a href="#" target="_blank">Infektionsschutzgesetz</a></li>
+            <li><a href="#" target="_blank">Kündigungsschutzgesetz</a></li>
+            <li><a href="#" target="_blank">Ladenschlussgesetz</a></li>
+            <li><a href="#" target="_blank">Lastenhandhabungsverordnung</a></li>
+            <li><a href="#" target="_blank">Mindestlohngesetz</a></li>
+            <li><a href="#" target="_blank">Mutterschutzgesetz</a></li>
+            <li><a href="#" target="_blank">Nachweisgesetz</a></li>
+            <li><a href="#" target="_blank">PSA-Benutzungsverordnung</a></li>
+            <li><a href="#" target="_blank">Pflegezeitgesetz</a></li>
+            <li><a href="#" target="_blank">Teilzeit- und Befristungsgesetz</a></li>
+            <li><a href="#" target="_blank">Verordnung zur arbeitsmedizinischen Vorsorge</a></li>
+          </ul>
+        </section>
+
+        <p class="hint">
+          Hinweis: Bitte ersetzen Sie die Platzhalter-Links (#) durch die tatsächlichen PDF- oder Webseiten-Links.
+          Wenn Sie möchten, können einzelne Gesetze auch auf eigene Unterseiten oder PDF-Dateien verlinkt werden.
+        </p>
+      </div>
+    </main>
   </div>
 </body>
 </html>
